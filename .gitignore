@@ -1,4 +1,4 @@
 .idea
-framework
-www/assets
-protected/runtime
+/framework
+/www/assets
+/protected/runtime
