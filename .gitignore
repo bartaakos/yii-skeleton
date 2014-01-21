@@ -2,3 +2,5 @@
 /framework
 /www/assets
 /protected/runtime
+/protected/config/custom.php
+/protected/config/params.php
