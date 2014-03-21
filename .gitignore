@@ -1,6 +1,7 @@
 .idea
 /framework
 /www/assets
+/protected/vendor
 /protected/runtime
 /protected/config/custom.php
 /protected/config/params.php

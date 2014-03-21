@@ -10,38 +10,36 @@
 // CWebApplication properties can be configured here.
 return CMap::mergeArray(
     array(
+        'aliases' => array(
+            'vendor' => 'application.vendor',
+            'giix' => 'vendor.assisrafael.giix',
+        ),
         'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
         'name' => 'Yii Application',
-
         'sourceLanguage' => 'en_us',
         'language' => 'en',
-
         // preloading 'log' component
         'preload' => array('log'),
-
         // autoloading model and component classes
         'import' => array(
             'application.models.*',
             'application.models.forms.*',
             'application.components.*',
-            'ext.giix-components.*',
+//            'vendor.assisrafael.giix.components.*',
             'ext.yii-mail.*',
-            'ext.file.*',
             'ext.*',
         ),
-
         'modules' => array(
             'gii' => array(
                 'class' => 'system.gii.GiiModule',
                 'password' => 'asdasd',
                 'generatorPaths' => array(
-                    'ext.giix-core', // giix generators
+                    'vendor.assisrafael.giix.generators', // giix generators
                 ),
                 // If removed, Gii defaults to localhost only. Edit carefully to taste.
                 'ipFilters' => array('127.0.0.1', '::1'),
             ),
         ),
-
         // application components
         'components' => array(
             'coreMessages' => array(
@@ -77,18 +75,15 @@ return CMap::mergeArray(
                 'showScriptName' => false,
                 'rules' => require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'url_rules.php')
             ),
-
             'errorHandler' => array(
                 // use 'site/error' action to display errors
                 'errorAction' => 'site/error',
             ),
 
         ),
-
         // application-level parameters that can be accessed
         // using Yii::app()->params['paramName']
         'params' => require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php'),
     ),
-
     require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'custom.php')
 );

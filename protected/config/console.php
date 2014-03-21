@@ -4,14 +4,16 @@
 // Any writable CConsoleApplication properties can be configured here.
 return CMap::mergeArray(
     array(
+        'aliases' => array(
+            'vendor' => 'application.vendor',
+        ),
         'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
         'name' => 'Console',
         'import' => array(
             'application.models.*',
             'application.components.*',
-            'ext.giix.components.*',
-            'ext.giix.helpers.*',
             'ext.yii-mail.*',
+            'ext.*',
         ),
         // application components
         'components' => array(
@@ -36,6 +38,15 @@ return CMap::mergeArray(
                 'dryRun' => false
             ),
         ),
-        'params' => require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php'),
+        'params' => CMap::mergeArray(array(
+                'composer.callbacks' => array(
+                    // args for Yii command runner
+                    'yiisoft/yii-install' => array('yiic', 'webapp', dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'),
+                    'post-update' => array('yiic', 'migrate'),
+                    'post-install' => array('yiic', 'migrate'),
+                ),
+            ),
+            require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php')),
     ),
-    require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'custom.php'));
+    require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'custom.php')
+);
