@@ -1,10 +1,10 @@
 {
-    "name": "brta-yii-skeleton",
-    "description": "Yii Distribution",
-    "keywords": ["package", "dependency", "autoload"],
+    "name": "bartaakos/brta-yii-skeleton",
+    "description": "Basic Yii skeleton",
+    "keywords": ["package", "dependency", "autoload", "yii skeleton"],
     "homepage": "http://example.com/",
-    "type": "yii-application",
-    "license": "BSD-3-Clause",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Akos Barta",
