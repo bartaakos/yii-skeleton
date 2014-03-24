@@ -2,6 +2,10 @@
 
 Basic skeleton for Yii applications with composer
 
+# Installation
+
+<code>$ php composer.phar create-project bartaakos/brta-yii-skeleton --stability="dev" MyNewProject</code>
+
 # Static files
 
 <pre>
