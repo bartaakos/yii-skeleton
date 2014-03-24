@@ -3,7 +3,7 @@
     "description": "Basic Yii skeleton",
     "keywords": ["package", "dependency", "autoload", "yii skeleton"],
     "homepage": "http://example.com/",
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "authors": [
         {
