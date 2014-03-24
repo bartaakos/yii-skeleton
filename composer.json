@@ -1,5 +1,5 @@
 {
-    "name": "example/app",
+    "name": "brta-yii-skeleton",
     "description": "Yii Distribution",
     "keywords": ["package", "dependency", "autoload"],
     "homepage": "http://example.com/",

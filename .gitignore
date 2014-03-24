@@ -1,6 +1,7 @@
 .idea
-/www/assets
-/protected/vendor
-/protected/runtime
-/protected/config/custom.php
-/protected/config/params.php
+composer.lock
+/web/assets
+/vendor
+/runtime
+/config/custom.php
+/config/params.php
