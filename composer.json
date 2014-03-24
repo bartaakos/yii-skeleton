@@ -1,8 +1,8 @@
 {
     "name": "bartaakos/brta-yii-skeleton",
     "description": "Basic Yii skeleton",
-    "keywords": ["package", "dependency", "autoload", "yii skeleton"],
-    "homepage": "http://example.com/",
+    "keywords": ["yii skeleton"],
+    "homepage": "https://github.com/bartaakos",
     "type": "project",
     "license": "MIT",
     "authors": [
