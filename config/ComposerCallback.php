@@ -181,6 +181,16 @@ class ComposerCallback
 
         if (\Yii::app() === null) {
             if (is_file(CONSOLE_CONFIG)) {
+                // creating ignored files if neccessary
+                $custom = dirname(__FILE__).'/custom.php';
+                if(!is_file($custom)) {
+                    copy(dirname(__FILE__).'/custom.php.dist', $custom);
+                }
+
+                $params = dirname(__FILE__).'/params.php';
+                if(!is_file($params)) {
+                    copy(dirname(__FILE__).'/params.php.dist', $params);
+                }
                 $app = \Yii::createConsoleApplication(CONSOLE_CONFIG);
             } else {
                 throw new \Exception("File from CONSOLE_CONFIG not found");
