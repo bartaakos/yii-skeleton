@@ -26,7 +26,7 @@ The files listed above are ignored and you should handle them as static content.
 
 ## [nDeploy](https://github.com/Netpositive/ndeploy)
 
-This is a very convinient tool for high-level site maintenance.
+This is a very convenient tool for high-level site maintenance.
 
 # Credits
 
