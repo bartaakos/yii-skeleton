@@ -1,10 +1,7 @@
 <?php
 
-class BController extends Controller
+class Mailer
 {
-
-    public $layout = 'main';
-
     public static function sendMail($params = array())
     {
         /** @var $message YiiMailMessage */

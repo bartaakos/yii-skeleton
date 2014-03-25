@@ -27,7 +27,8 @@
         "assisrafael/giix": "dev-master",
         "crisu83/yii-auth": "dev-master",
         "crisu83/yii-seo": "dev-master",
-        "crisu83/yii-debug": "dev-master"
+        "crisu83/yii-debug": "dev-master",
+        "swiftmailer/swiftmailer": "dev-master"
     },
     "require-dev":{
         "malyshev/yii-debug-toolbar": "dev-master"
