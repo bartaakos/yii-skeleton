@@ -25,7 +25,7 @@ return CMap::mergeArray(
             'application.models.*',
             'application.models.forms.*',
             'application.components.*',
-//            'vendor.assisrafael.giix.components.*',
+            'vendor.assisrafael.giix.components.*',
             'ext.yii-mail.*',
             'ext.*',
         ),
