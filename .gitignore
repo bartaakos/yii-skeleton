@@ -1,7 +1,4 @@
 .idea
 composer.lock
-/web/assets
-/vendor
-/runtime
 /config/custom.php
 /config/params.php
