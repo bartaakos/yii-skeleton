@@ -1,4 +1,4 @@
-# brta-yii-skeleton
+# yii-skeleton
 
 This is a basic skeleton for Yii applications enhanced with composer.
 
