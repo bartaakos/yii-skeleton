@@ -235,8 +235,8 @@ class YiiMail extends CApplicationComponent
     public function registerScripts() {
     	if (self::$registeredScripts) return;
     	self::$registeredScripts = true;
-		require Yii::getPathOfAlias('vendor.swiftmailer.swiftmailer.lib.classes').DIRECTORY_SEPARATOR.'Swift.php';
-        Yii::registerAutoloader(array('Swift','autoload'));
-        require Yii::getPathOfAlias('vendor.swiftmailer.swiftmailer.lib').DIRECTORY_SEPARATOR.'swift_init.php';
+//		require Yii::getPathOfAlias('vendor.swiftmailer.swiftmailer.lib.classes').DIRECTORY_SEPARATOR.'Swift.php';
+//        Yii::registerAutoloader(array('Swift','autoload'));
+//        require Yii::getPathOfAlias('vendor.swiftmailer.swiftmailer.lib').DIRECTORY_SEPARATOR.'swift_init.php';
 	}
 }
