@@ -1,5 +1,5 @@
 <?php
 return array(
-    'adminEmail' => 'brta.akos@gmail.com',
+    'adminEmail' => 'admin@example.com',
     'mail_sender' => 'noreply@example.com',
 );
