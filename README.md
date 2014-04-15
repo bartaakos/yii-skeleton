@@ -6,7 +6,7 @@ This is a basic skeleton for Yii applications enhanced with composer.
 
 For project initialization you can run simply the command below:
 
-<code>$ php composer.phar create-project bartaakos/yii-skeleton MyNewProject</code>
+<code>$ composer create-project bartaakos/yii-skeleton MyNewProject</code>
 
 After the project is created this command creates the two configuration files (<code>custom.php</code>, <code>params.php</code>) automatically by copying them from the distribution versions. **You should override them as soon as the command is finished.**
 
@@ -31,5 +31,3 @@ This is a very convenient tool for high-level site maintenance.
 # Credits
 
 [Netpositive](http://netpositive.hu)
-
-[Phundament](http://phundament.com)
