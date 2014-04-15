@@ -79,7 +79,7 @@ application.framework.extra.migrate.ask=false
 ndeploy.basedir=/home/ndeploy/current
 </pre>
 
-Note that I removed the yiic migration after <code>composer update/install</code> because we do that with nDeploy as you can see. If you need to get that back simply uncomment those lines in the params in <code>console/console.php</code> and set <code>application.framework.extra.migrate</code> to <code>false</code> in <code>build.properties</code>.
+Note that I removed the <code>yiic migration</code> after <code>composer update/install</code> because we do that with nDeploy as you can see. If you need to get that back simply uncomment those lines in the params in <code>console/console.php</code> and set <code>application.framework.extra.migrate</code> to <code>false</code> in <code>build.properties</code>.
 
 ## Credits
 
