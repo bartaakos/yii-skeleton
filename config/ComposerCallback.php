@@ -10,6 +10,7 @@
  */
 
 namespace config;
+
 use Composer\Script\Event;
 
 /**
@@ -24,28 +25,26 @@ use Composer\Script\Event;
  *
  * config.php
  *     'params' => array(
-'composer.callbacks' => array(
-'post-update' => array('yiic', 'migrate'),
-'post-install' => array('yiic', 'migrate'),
-'yiisoft/yii-install' => array('yiic', 'webapp', realpath(dirname(__FILE__))),
-),
-)
-);
-
+ * 'composer.callbacks' => array(
+ * 'post-update' => array('yiic', 'migrate'),
+ * 'post-install' => array('yiic', 'migrate'),
+ * 'yiisoft/yii-install' => array('yiic', 'webapp', realpath(dirname(__FILE__))),
+ * ),
+ * )
+ * );
  * composer.json
  *   "scripts": {
  *      "pre-install-cmd": "config\\ComposerCallback::preInstall",
-"post-install-cmd": "config\\ComposerCallback::postInstall",
-"pre-update-cmd": "config\\ComposerCallback::preUpdate",
-"post-update-cmd": "config\\ComposerCallback::postUpdate",
-"post-package-install": [
-"config\\ComposerCallback::postPackageInstall"
-],
-"post-package-update": [
-"config\\ComposerCallback::postPackageUpdate"
-]
-}
-
+ * "post-install-cmd": "config\\ComposerCallback::postInstall",
+ * "pre-update-cmd": "config\\ComposerCallback::preUpdate",
+ * "post-update-cmd": "config\\ComposerCallback::postUpdate",
+ * "post-package-install": [
+ * "config\\ComposerCallback::postPackageInstall"
+ * ],
+ * "post-package-update": [
+ * "config\\ComposerCallback::postPackageUpdate"
+ * ]
+ * }
  *
  *
  * @author Tobias Munk <schmunk@usrbin.de>
@@ -53,8 +52,8 @@ use Composer\Script\Event;
  * @since 0.7.1
  */
 
-defined('YII_PATH') or define('YII_PATH', dirname(__FILE__).'/../vendor/yiisoft/yii/framework');
-defined('CONSOLE_CONFIG') or define('CONSOLE_CONFIG', dirname(__FILE__).'/console.php');
+defined('YII_PATH') or define('YII_PATH', dirname(__FILE__) . '/../vendor/yiisoft/yii/framework');
+defined('CONSOLE_CONFIG') or define('CONSOLE_CONFIG', dirname(__FILE__) . '/console.php');
 
 class ComposerCallback
 {
@@ -121,7 +120,7 @@ class ComposerCallback
     public static function postPackageInstall(Event $event)
     {
         $installedPackage = $event->getOperation()->getPackage();
-        $hookName = $installedPackage->getPrettyName().'-install';
+        $hookName = $installedPackage->getPrettyName() . '-install';
         self::runHook($hookName);
     }
 
@@ -134,7 +133,7 @@ class ComposerCallback
     public static function postPackageUpdate(Event $event)
     {
         $installedPackage = $event->getOperation()->getTargetPackage();
-        $commandName = $installedPackage->getPrettyName().'-update';
+        $commandName = $installedPackage->getPrettyName() . '-update';
         self::runHook($commandName);
     }
 
@@ -149,15 +148,19 @@ class ComposerCallback
     public static function confirm($message)
     {
         echo $message . ' [yes|no] ';
+
         return !strncasecmp(trim(fgets(STDIN)), 'y', 1);
     }
 
     /**
      * Runs Yii command, if available (defined in config/console.php)
      */
-    private static function runHook($name){
+    private static function runHook($name)
+    {
         $app = self::getYiiApplication();
-        if ($app === null) return;
+        if ($app === null) {
+            return;
+        }
 
         if (isset($app->params['composer.callbacks'][$name])) {
             $args = $app->params['composer.callbacks'][$name];
@@ -172,25 +175,24 @@ class ComposerCallback
      */
     private static function getYiiApplication()
     {
-        if (!is_file(YII_PATH.'/yii.php'))
-        {
+        if (!is_file(YII_PATH . '/yii.php')) {
             return null;
         }
 
-        require_once(YII_PATH.'/yii.php');
+        require_once(YII_PATH . '/yii.php');
         spl_autoload_register(array('YiiBase', 'autoload'));
 
         if (\Yii::app() === null) {
             if (is_file(CONSOLE_CONFIG)) {
                 // creating ignored files if neccessary
-                $custom = dirname(__FILE__).'/custom.php';
-                if(!is_file($custom)) {
-                    copy(dirname(__FILE__).'/custom.php.dist', $custom);
+                $custom = dirname(__FILE__) . '/custom.php';
+                if (!is_file($custom)) {
+                    copy(dirname(__FILE__) . '/custom.php.dist', $custom);
                 }
 
-                $params = dirname(__FILE__).'/params.php';
-                if(!is_file($params)) {
-                    copy(dirname(__FILE__).'/params.php.dist', $params);
+                $params = dirname(__FILE__) . '/params.php';
+                if (!is_file($params)) {
+                    copy(dirname(__FILE__) . '/params.php.dist', $params);
                 }
                 $app = \Yii::createConsoleApplication(CONSOLE_CONFIG);
             } else {
@@ -199,6 +201,7 @@ class ComposerCallback
         } else {
             $app = \Yii::app();
         }
+
         return $app;
     }
 
