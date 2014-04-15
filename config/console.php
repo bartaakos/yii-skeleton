@@ -41,8 +41,8 @@ return CMap::mergeArray(
         'params' => CMap::mergeArray(array(
                 'composer.callbacks' => array(
                     // args for Yii command runner
-                    'post-update' => array('yiic', 'migrate'),
-                    'post-install' => array('yiic', 'migrate'),
+//                    'post-update' => array('yiic', 'migrate'),
+//                    'post-install' => array('yiic', 'migrate'),
                 ),
             ),
             require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php')),
