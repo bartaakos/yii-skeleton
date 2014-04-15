@@ -168,6 +168,7 @@ class ComposerCallback
 
     /**
      * Creates console application, if Yii is available
+     * Also creates custom files if they do not exist
      */
     private static function getYiiApplication()
     {
