@@ -1,8 +1,5 @@
 <?php
-// register PHPExcel
-//spl_autoload_unregister(array('YiiBase', 'autoload'));
-//require_once(dirname(__FILE__) . '/../extensions/phpexcel/PHPExcel.php');
-//spl_autoload_register(array('YiiBase', 'autoload'));
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -43,8 +40,7 @@ return CMap::mergeArray(
         // application components
         'components' => array(
             'coreMessages' => array(
-//          'basePath' => 'protected/messages',
-                'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'messages',
+                'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . 'messages',
             ),
             'session' => array(
                 'timeout' => 60 * 60 * 24,
