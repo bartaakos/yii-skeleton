@@ -14,6 +14,7 @@ return CMap::mergeArray(
             'application.components.*',
             'ext.yii-mail.*',
             'ext.*',
+            'vendor.assisrafael.giix.components.*',
         ),
         // application components
         'components' => array(
