@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__.'/vendor/autoload.php');
 
 // change the following paths if necessary
 $yiic=dirname(__FILE__).'/vendor/yiisoft/yii/framework/yiic.php';
