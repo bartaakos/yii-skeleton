@@ -26,7 +26,8 @@
         "yiiext/imperavi-redactor-widget": "dev-master",
         "assisrafael/giix": "dev-master",
         "swiftmailer/swiftmailer": "dev-master",
-        "bartaakos/cserializebehavior": ">=1.0"
+        "bartaakos/cserializebehavior": "dev-master",
+        "bartaakos/np-yii-console-command": "dev-master"
     },
     "require-dev":{
         "malyshev/yii-debug-toolbar": "dev-master"
