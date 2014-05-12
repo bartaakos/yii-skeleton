@@ -27,7 +27,8 @@
         "assisrafael/giix": "dev-master",
         "swiftmailer/swiftmailer": "dev-master",
         "bartaakos/cserializebehavior": "dev-master",
-        "bartaakos/np-yii-console-command": "dev-master"
+        "bartaakos/np-yii-console-command": "dev-master",
+        "bartaakos/yii-simple-queue": "dev-master"
     },
     "require-dev":{
         "malyshev/yii-debug-toolbar": "dev-master"
