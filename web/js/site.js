@@ -1,5 +1,9 @@
+var site = site || {};
+
 $(document).ready(function () {
-    var site = {
+    var tmpSite = site;
+
+    site = {
         init: function () {
             this.foo();
         },
@@ -7,7 +11,7 @@ $(document).ready(function () {
         foo: function () {
             // bar
         }
-    }
+    };
 
     site.init();
 });
