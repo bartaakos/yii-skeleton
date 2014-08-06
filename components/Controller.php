@@ -20,4 +20,32 @@ class Controller extends GxController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+    protected function beforeAction($action)
+    {
+        $baseLayout = $this->layout;
+        if(Yii::app()->request->isAjaxRequest) {
+            $this->layout = false;
+        } else {
+            $this->layout = $baseLayout;
+        }
+
+        return parent::beforeAction($action);
+    }
+
+    public function handleRender($view, $params)
+    {
+        if(Yii::app()->request->isAjaxRequest) {
+            $this->renderPartial($view, $params);
+        } else {
+            $this->render($view, $params);
+        }
+
+        Yii::app()->end();
+    }
+
+    public function confirm($body, $params, $confirmedUrl, $confirmedBtnLbl = 'Confirm', $ajax = false)
+    {
+        $this->handleRender('//common/confirm', array('body' => $body, 'params' => $params, 'confirmedUrl' => $confirmedUrl, 'confirmedBtnLbl' => $confirmedBtnLbl, 'ajax' => $ajax));
+    }
 }
