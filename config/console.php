@@ -39,14 +39,7 @@ return CMap::mergeArray(
                 'dryRun' => false
             ),
         ),
-        'params' => CMap::mergeArray(array(
-                'composer.callbacks' => array(
-                    // args for Yii command runner
-//                    'post-update' => array('yiic', 'migrate'),
-//                    'post-install' => array('yiic', 'migrate'),
-                ),
-            ),
-            require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php')),
+        'params' => require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php'),
     ),
     require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'custom.php')
 );
